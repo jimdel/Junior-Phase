@@ -30,7 +30,10 @@
 - Use **_curl_** in the CLI for doing HTTP requests
   - Can use it to create all sorts of HTTP requests
     - Also to see the response sent from servers
-
+## Express.js
+- A framework written in JavaScript that allows us to build a web server easily
+- First we must ```const express = require('express')``` to link our page with express functions
+-
 
 
 
