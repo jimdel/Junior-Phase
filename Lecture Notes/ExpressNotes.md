@@ -35,6 +35,7 @@
 - First we must ``const express = require('express')`` to link our page with express functions
 - Then we must listen `const app = express();` & `app.listen(3000, () => {console.log('Listening on port 3000')}`
   - This allows us to wait for GET request.
+- Get Request: `app.get('/yolo',(req, res) => {}`
 
 
 
