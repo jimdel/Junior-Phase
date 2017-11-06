@@ -32,8 +32,9 @@
     - Also to see the response sent from servers
 ## Express.js
 - A framework written in JavaScript that allows us to build a web server easily
-- First we must ```const express = require('express')``` to link our page with express functions
--
+- First we must ``const express = require('express')`` to link our page with express functions
+- Then we must listen `const app = express();` & `app.listen(3000, () => {console.log('Listening on port 3000')}`
+  - This allows us to wait for GET request.
 
 
 
