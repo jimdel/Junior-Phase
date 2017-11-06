@@ -22,7 +22,7 @@
 - Example Clients
   - Web Browswers
   - Household Apps
-  - Steroes
+  - Steroes/Refridgerators
   - Mobile Apps
 - **Not** a transmission protocol.
 - Every request gets exactly one total response (sometimes broken into chunks)
