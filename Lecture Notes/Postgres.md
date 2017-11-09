@@ -38,13 +38,13 @@
 ```javascript
   router.get('/tweets', function(req, res, next){
     //When a user goes to /tweets URI
-  client.query('SELECT * FROM tweets', function (err, result) {
+    client.query('SELECT * FROM tweets', function (err, result) {
     //We are going to query the db for all of the tweets
-    if (err) return next (err); // If there is an error pass it to the middleware error checker
-    var tweets = result.rows;
+      if (err) return next (err); // If there is an error pass it to the middleware error checker
+      var tweets = result.rows;
     //Use .rows pg property to save the results of the query into a variable
-  res.render('index', { title: 'Twitter.js', tweets: tweets, showForm: true });
-  //Use res.render & nunjucks to dynamically render the results of the query in html
+      res.render('index', { title: 'Twitter.js', tweets: tweets, showForm: true });
+    //Use res.render & nunjucks to dynamically render the results of the query in html
     });
   });
 ```
