@@ -1,4 +1,4 @@
-#Sequelize
+# Sequelize
 ## Introduction
 - ORM
   - An object relational model written in Javascript that acts as a bridge in between your code and the DBMS
