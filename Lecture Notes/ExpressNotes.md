@@ -42,18 +42,18 @@
 ```
 - This allows us to wait for requests from the client.
 - The above uses port 3000, this isn't super important unless we have it listen on a port that is already being used.
-- GET Request:
+- We can use GET requests to request information to be sent to us from the server:
 ```javascript
 app.get('/yolo',(req, res) => {res.send('HERE IS THE RESPONSE OUR SERVER WILL SEND, THIS CAN BE ANYTHING: A FILE, TEXT, ETC')}
 ```
 - Special GET Request with a variable in the URI:
-  ```javascript
-   app.get('/arrayOfJokes/:variableName', (req, res) => {
-     const variableName = req.params.variableNum;
-     //This can then be used in JavaScript code;
+```javascript
+app.get('/arrayOfJokes/:variableName', (req, res) => {
+const variableName = req.params.variableNum;
+//This can then be used in JavaScript code;
      }
-  ```
-
+```
+- The above functions are request
 
 
 
