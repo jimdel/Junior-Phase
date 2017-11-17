@@ -5,12 +5,9 @@
   - Enables us to use Javscript things instead of directly writing SQL statements
     - Behind the scenes it generates SQL
 - Doesn't match up 100% so there may be instances when we will need to write SQL
-- Sequelize is the one we shall be using
-  - Has models and instances as opposed to tables and rows
-    - Models are Tables
-      - Constructor function literals are 'models' for future instances
-    - Instances are the rows
-      - Each instance is a row with properties/methods
+- [Sequelize](#sequelize)
+  - [Introduction](#introduction)
+- [Usage](#usage)
 # Usage
 - Step 1: NPM install
 - Step 2: Require and Instantiate Sequelize
@@ -23,7 +20,7 @@
 ```javascript
     //Defining a table
     //Table named user that has the columns name and pictureURL that are both STRING values
-    const User = db.define('user';, {
+    const User = db.define('user', {
       name: Sequelize.STRING,
       pictureUrl: Sequelize.STRING
     });
