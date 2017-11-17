@@ -59,7 +59,7 @@
       title: req.body.title,
     })
     //.then we can say the creation was successful
-    .then(res.send('Creation Successful))
+    .then(res.send('Creation Successful'))
     //Need to continue the middleware chain using next if there is an error
     //This is because if an error occurs nothing will catch the error and
     //the application would hang
