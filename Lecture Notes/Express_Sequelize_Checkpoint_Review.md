@@ -8,7 +8,7 @@
   - Use: ``` npm install --save PACKAGE_NAME ```
     - express
     - morgan
-    - pg
+    - pg@6 -> to avoid a weird error install v.6
     - sequelize
     - body-parser
     - nodemon
