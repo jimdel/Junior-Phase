@@ -115,7 +115,7 @@
         }
       })
 
-      //Sets the association of the tables
+      //Sets the association of the tables (foreign keys)
       Category.hasMany(Todos);
       Todo.belongsTo(Category);
 
