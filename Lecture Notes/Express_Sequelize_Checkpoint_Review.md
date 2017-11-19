@@ -25,6 +25,7 @@
   const nunjucks = require('nunjucks');
   //Nunjucks configuration: allows nunjucks to use the views directory to render content dynamically
   const env = nunjucks.configure('views', {noCache: true})
+  app.use('html', nunjucks);
   const bodyParser = require('body-parser');
   //Body Parser configuration
   app.use(bodyParser.urlencoded({extended: false}))
