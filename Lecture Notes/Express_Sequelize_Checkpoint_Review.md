@@ -91,7 +91,7 @@
 
 # Setup Routes/index.js (if using a separate routes file)
 
-- Set up router
+- This allows you to create your routes in a separate file
 
 ```javascript
 
