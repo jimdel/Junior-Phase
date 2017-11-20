@@ -88,6 +88,20 @@
   })
 
 ```
+
+# Setup Routes/index.js (if using a separate routes file)
+
+- Set up router
+
+```javascript
+
+const express = require('express');
+const router = express.Router();
+
+module.exports = router;
+```
+- In this file, you can now create handlers on `router`.
+
 # Setup Sequelize Models
 - Create a directory called models
 - Create an index.js file
