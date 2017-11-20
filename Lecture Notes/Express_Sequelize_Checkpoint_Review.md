@@ -102,6 +102,22 @@ module.exports = router;
 ```
 - In this file, you can now create handlers on `router`.
 
+- `put` and `delete` requests usually edit or delete data, and most likely you will not need to send content back to the client (unless the spec specifies something to send). If not sending anything, send status 204 to specify the request was success but no content needed to be sent back.
+
+```javascript
+// put request example. NOTE: Todos.complete was a method defined in another file (not built in!!)
+router.put('/users/:name/tasks/:index', (req, res, next) => {
+  Todos.complete(req.params.name, req.params.index);
+  res.sendStatus(204);
+})
+
+// delete request example. NOTE: Todos.remove was a method defined in another file (not built in!!)
+router.delete('/users/:name/tasks/:index', (req, res, next) => {
+  Todos.remove(req.params.name, req.params.index);
+  res.sendStatus(204);
+})
+```
+
 # Setup Sequelize Models
 - Create a directory called models
 - Create an index.js file
