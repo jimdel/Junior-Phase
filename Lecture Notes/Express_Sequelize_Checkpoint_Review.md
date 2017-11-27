@@ -22,18 +22,23 @@
   //Require node modules for future use
   const express = require('express');
   const app = express();
-  const nunjucks = require('nunjucks');
+
   //Nunjucks configuration: allows nunjucks to use the views directory to render content dynamically
+  const nunjucks = require('nunjucks');
   const env = nunjucks.configure('views', {noCache: true})
   app.use('html', nunjucks);
+
+   //Body Parser configuration
   const bodyParser = require('body-parser');
-  //Body Parser configuration
   app.use(bodyParser.urlencoded({extended: false}))
+
   //Port Number to listen on
   const PORT = 3000;
+
   //Import models from models directory
   const Todo = require('./models').Todo;
   const Category = require('./models').Category;
+  const models = require('./models');
 
 
   //Defualt Page Route
@@ -49,18 +54,18 @@
         const err = new Error('Detailed message about the error')
         next(err);
       } else {
-        res.send("Hello");
+        res.send(foundID => {foundID});
       }
   })};
 
   //Example POST request
-  app.post('/add',(req,res,next) => {
+  app.post('/add',(req, res, next) => {
     //Use req.body.PROPNAME to access the desired property to save to the db
     Todo.create({
       title: req.body.title,
     })
-    //.then we can say the creation was successful
-    .then(res.send('Creation Successful'))
+    //.then we can say the creation was successful with a custom status
+    .then(res.status(201).send('Creation Successful'))
     //Need to continue the middleware chain using next if there is an error
     //This is because if an error occurs nothing will catch the error and
     //the application would hang
@@ -71,6 +76,7 @@
   //If we want to be specific about where the error comes from we use the following
   //Always has four arguments
 
+  //Error handling middleware, always has 4 args
   app.use((err, req, res, next) => {
     //Sends the status of the error (if one exists) and a message
     if(err) {
@@ -81,7 +87,7 @@
     }
   })
 
-  //The listener function, allows our server to wait for requests
+  //The listener function, allows our server to wait for requests after the db sync
   app.listen(PORT, () => {
     models.db.sync()
     .then(console.log(`Listening on ${PORT} ...`));
